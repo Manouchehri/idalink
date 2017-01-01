@@ -42,7 +42,7 @@ if __name__ == '__main__':
     #        to make sure that autoanalysis has finished.
 
     if mode == 'threaded':
-        ThreadedServer(SlaveService, port=port).start()
+        ThreadedServer(SlaveService, port=port).start()  # Add authenticator=rpyc.utils.authenticators.SSLAuthenticator?
     else:
         OneShotServer(SlaveService, port=port).start()
         idc.Exit(0)

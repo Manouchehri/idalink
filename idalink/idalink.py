@@ -58,7 +58,7 @@ def _which(filename):
 
 
 def _ida_connect(host, port):
-    link = rpyc_classic.connect(host, port)
+    link = rpyc_classic.connect(host, port)  # Add SSL stuff here for the cliet.
     LOG.debug('Connected to %s:%d', host, port)
 
     idc = link.root.getmodule('idc')
